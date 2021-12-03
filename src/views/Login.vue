@@ -38,12 +38,17 @@
         </v-col>
       </v-row>
     </v-form>
-    <v-row><v-col align="center"><v-btn  @click="googleSignIn"><v-icon>mdi-google</v-icon>Sign in with google</v-btn></v-col></v-row>
     <v-row
       ><v-col align="center"
-        ><p class="text-caption">Don't have an account?</p> <v-btn small color="secondary" to="register"
-    > Register</v-btn
+        ><v-btn @click="googleSignIn"
+          ><v-icon>mdi-google</v-icon>Sign in with google</v-btn
         ></v-col
+      ></v-row
+    >
+    <v-row
+      ><v-col align="center"
+        ><p class="text-caption">Don't have an account?</p>
+        <v-btn small color="secondary" to="register"> Register</v-btn></v-col
       ></v-row
     >
 
@@ -64,7 +69,12 @@
 </template>
 
 <script>
-import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider  } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
 
 export default {
   name: "Login",
@@ -100,13 +110,15 @@ export default {
     googleSignIn() {
       const auth = getAuth();
       const provider = new GoogleAuthProvider();
-      provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-      signInWithPopup(auth, provider).then(() => {
-        this.$router.push('/tasks')
-      }).catch(error => {
-        console.log(error);
-      });
-    }
+      provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
+      signInWithPopup(auth, provider)
+        .then(() => {
+          this.$router.push("/tasks");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
 };
 </script>

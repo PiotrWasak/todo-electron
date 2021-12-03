@@ -36,8 +36,10 @@
       </v-row>
     </v-form>
     <v-row
-      ><v-col  align="center"
-        ><v-btn small color="secondary" to="login">Already have an account? Log in!</v-btn></v-col
+      ><v-col align="center"
+        ><v-btn small color="secondary" to="login"
+          >Already have an account? Log in!</v-btn
+        ></v-col
       ></v-row
     >
     <v-row>

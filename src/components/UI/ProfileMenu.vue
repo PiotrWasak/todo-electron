@@ -1,8 +1,10 @@
 <template>
   <v-card v-if="isVisible" class="profileMenu">
     <v-container>
-    <v-row><v-col><v-icon>mdi-playlist-check</v-icon></v-col><v-col><v-btn text>Sign out</v-btn></v-col></v-row>
-
+      <v-row
+        ><v-col><v-icon>mdi-playlist-check</v-icon></v-col
+        ><v-col><v-btn text>Sign out</v-btn></v-col></v-row
+      >
     </v-container>
   </v-card>
 </template>
@@ -13,7 +15,7 @@ export default {
   props: {
     userData: Object,
     isVisible: Boolean,
-  }
+  },
 };
 </script>
 
